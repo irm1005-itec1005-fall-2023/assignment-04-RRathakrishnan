@@ -1,9 +1,4 @@
-/* Assignment 04: Finishing a Todo List App
- *
- * 
- *
- */
-
+/* Assignment 04: Finishing a Todo List App */
 
 //
 // Variables
@@ -24,7 +19,7 @@ let appContainer = document.getElementById(appID);
 function inititialise() {
   // If anything is wrong with the app container then end
   if (!appContainer) {
-    console.error("Error: Could not find app contianer");
+    console.error("Error: Could not find app container");
     return;
   }
 
@@ -37,7 +32,45 @@ function inititialise() {
   console.log("App successfully initialised");
 }
 
+// Function to add a task to the task list
+function addTask() {
+  const taskInput = document.getElementById('taskInput');
+  const taskListContainer = document.getElementById('taskList');
+
+  if (taskInput.value !== '') {
+    taskList.push(taskInput.value);
+    taskInput.value = '';
+    renderTasks();
+  }
+}
+
+// Function to delete a task from the task list
+function deleteTask(index) {
+  taskList.splice(index, 1);
+  renderTasks();
+}
+
+// Function to render the tasks in the task list
+function renderTasks() {
+  const taskListContainer = document.getElementById('taskList');
+  taskListContainer.innerHTML = '';
+
+  taskList.forEach((task, index) => {
+    const li = document.createElement('li');
+    const deleteBtn = document.createElement('button');
+
+    li.innerHTML = task;
+    deleteBtn.innerHTML = 'Done';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.addEventListener('click', () => deleteTask(index));
+
+    li.appendChild(deleteBtn);
+    taskListContainer.appendChild(li);
+  });
+}
+
 //
 // Inits & Event Listeners
 //
 inititialise();
+let taskList = [];

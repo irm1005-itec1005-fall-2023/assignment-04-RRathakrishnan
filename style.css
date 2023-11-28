@@ -7,6 +7,15 @@
 /*
  VARIABLES
 */
+/*
+ * CSS File for the solution
+ * Assignment 03
+ * You can modify these styles but you don't have to
+ */
+
+/*
+ VARIABLES
+*/
 :root {
   /* Core colours */
   /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
@@ -27,20 +36,77 @@
 /*
   PAGE / BODY
 */
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+  font-family: 'Arial', sans-serif;
+  background-image: url('images/gym.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo {
+  margin-bottom:550px;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+#app {
+  margin-top: 20px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 8px;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 main {
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 /****** Screen reader text utility clsas *******/
 .sr-only {
